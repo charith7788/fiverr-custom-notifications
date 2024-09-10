@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Fiverr Custom Notifications",
+  "version": "1.1",
+  "description": "Real-time custom sound and desktop notifications for Fiverr messages and job orders",
+  "permissions": [
+    "https://www.fiverr.com/*",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.fiverr.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "message_notification.mp3",
+    "order_notification.mp3",
+    "icon128.png"
+  ],
+  "icons": {
+    "128": "icon128.png"
+  }
+}
+
